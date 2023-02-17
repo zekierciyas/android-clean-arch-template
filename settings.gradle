@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "SatelliteList"
+include ':app'
+include ':presentation:list_screen'
+include ':presentation:detail_screen'
+include ':cache'
+include ':common:navigation'
+include ':common:utility'
