@@ -1,7 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-}
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")}
 
 android {
     compileSdk = Configurations.compileSdk
@@ -42,4 +43,6 @@ dependencies {
     implementation(DependencyCatalog.gson)
     implementation(DependencyCatalog.dataStore)
     api(DependencyCatalog.timberLogging)
+    implementation(DependencyCatalog.daggerHiltAndroid)
+    kapt(DependencyCatalog.daggerHiltCompiler)
 }

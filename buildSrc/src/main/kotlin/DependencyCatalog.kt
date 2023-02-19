@@ -16,6 +16,8 @@ object Versions {
     const val gson = "2.10.1"
     const val dataStore = "1.0.0"
     const val timberLogging = "5.0.1"
+    const val daggerHilt = "2.44.2"
+    const val navigation = "2.5.3"
 }
 
 object DependencyCatalog {
@@ -31,6 +33,10 @@ object DependencyCatalog {
     const val gson = "com.google.code.gson:gson:${Versions.gson}"
     const val dataStore = "androidx.datastore:datastore-preferences:${Versions.dataStore}"
     const val timberLogging = "com.jakewharton.timber:timber:${Versions.timberLogging}"
+    const val daggerHiltAndroid = "com.google.dagger:hilt-android:${Versions.daggerHilt}"
+    const val daggerHiltCompiler = "com.google.dagger:hilt-compiler:${Versions.daggerHilt}"
+    const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+    const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
 }
 
 object TestImplementation {

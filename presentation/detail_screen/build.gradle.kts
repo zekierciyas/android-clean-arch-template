@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -33,7 +35,6 @@ android {
 }
 
 dependencies {
-
     api(project(Modules.common.navigation))
     api(project(Modules.cache))
     implementation(DependencyCatalog.core)
@@ -42,4 +43,6 @@ dependencies {
     testImplementation(TestImplementation.junit)
     androidTestImplementation(AndroidTestImplementation.junit)
     androidTestImplementation(AndroidTestImplementation.espresso)
+    implementation(DependencyCatalog.daggerHiltAndroid)
+    kapt(DependencyCatalog.daggerHiltCompiler)
 }
