@@ -3,3 +3,4 @@ A demo app to showing dummy list of Satellites, Clean Architecture and Clean cod
 
 
 <img src="/previews/modularization_chart.png" align="left" width="500"/>
+
