@@ -35,7 +35,7 @@ android {
 dependencies {
 
     api(project(Modules.common.navigation))
-    implementation(project(Modules.cache))
+    api(project(Modules.cache))
     implementation(DependencyCatalog.core)
     implementation(DependencyCatalog.appCompat)
     implementation(DependencyCatalog.androidMaterial)

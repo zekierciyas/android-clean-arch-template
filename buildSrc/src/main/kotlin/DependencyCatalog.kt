@@ -13,6 +13,9 @@ object Versions {
     const val androidTestImplJunit = "1.1.3"
     const val androidTestEspresso = "3.4.0"
     const val kotlinCoroutines = "1.6.1"
+    const val gson = "2.10.1"
+    const val dataStore = "1.0.0"
+    const val timberLogging = "5.0.1"
 }
 
 object DependencyCatalog {
@@ -25,6 +28,9 @@ object DependencyCatalog {
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinCoroutines}"
     const val coroutineAndroid =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlinCoroutines}"
+    const val gson = "com.google.code.gson:gson:${Versions.gson}"
+    const val dataStore = "androidx.datastore:datastore-preferences:${Versions.dataStore}"
+    const val timberLogging = "com.jakewharton.timber:timber:${Versions.timberLogging}"
 }
 
 object TestImplementation {

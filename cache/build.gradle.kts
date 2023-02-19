@@ -33,11 +33,13 @@ android {
 }
 
 dependencies {
-
     implementation(DependencyCatalog.core)
     implementation(DependencyCatalog.appCompat)
     implementation(DependencyCatalog.androidMaterial)
     testImplementation(TestImplementation.junit)
     androidTestImplementation(AndroidTestImplementation.junit)
     androidTestImplementation(AndroidTestImplementation.espresso)
+    implementation(DependencyCatalog.gson)
+    implementation(DependencyCatalog.dataStore)
+    api(DependencyCatalog.timberLogging)
 }
