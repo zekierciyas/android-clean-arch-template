@@ -4,10 +4,12 @@ import android.content.Context
 import com.zekierciyas.cache.getJsonDataFromAsset
 import com.zekierciyas.cache.storage.PersistentStorage
 import com.zekierciyas.cache.toObject
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.collectLatest
+import javax.inject.Inject
 
-class SatelliteListRepository constructor(
-    private val context: Context,
+class SatelliteListRepository @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val storage: PersistentStorage): SatelliteList {
 
     companion object {
