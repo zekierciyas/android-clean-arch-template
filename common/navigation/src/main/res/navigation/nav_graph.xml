@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listScreenFragment">
+
+    <fragment
+        android:id="@+id/listScreenFragment"
+        android:name="com.zekierciyas.list_screen.view.ListScreenFragment"
+        android:label="ListScreenFragment" >
+        <action
+            android:id="@+id/action_listScreenFragment_to_detailScreenFragment"
+            app:destination="@id/detailScreenFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailScreenFragment"
+        android:name="com.zekierciyas.detail_screen.DetailScreenFragment"
+        android:label="ListScreenFragment" />
+
+</navigation>
