@@ -1,17 +1,10 @@
 package com.zekierciyas.detail_screen.binding
 
 import android.annotation.SuppressLint
-import android.widget.ImageView
-import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.zekierciyas.cache.model.position.Position
-import com.zekierciyas.cache.model.position.Positions
-import com.zekierciyas.detail_screen.DetailScreenUiState
-import com.zekierciyas.utility.extentions.hide
-import com.zekierciyas.utility.extentions.show
+import com.zekierciyas.detail_screen.view_model.DetailScreenUiState
 
 object BindingListScreenAdapter {
 

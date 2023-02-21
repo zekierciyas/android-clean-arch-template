@@ -16,7 +16,7 @@
 
     <fragment
         android:id="@+id/detailScreenFragment"
-        android:name="com.zekierciyas.detail_screen.DetailScreenFragment"
+        android:name="com.zekierciyas.detail_screen.view.DetailScreenFragment"
         android:label="ListScreenFragment" >
         <argument
             android:name="data"

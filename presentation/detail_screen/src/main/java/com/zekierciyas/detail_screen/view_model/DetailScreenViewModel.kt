@@ -1,4 +1,4 @@
-package com.zekierciyas.detail_screen
+package com.zekierciyas.detail_screen.view_model
 
 import androidx.lifecycle.ViewModel
 import com.zekierciyas.cache.model.position.Position

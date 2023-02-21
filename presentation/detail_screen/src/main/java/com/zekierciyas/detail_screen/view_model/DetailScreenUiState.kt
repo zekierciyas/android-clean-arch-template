@@ -1,8 +1,6 @@
-package com.zekierciyas.detail_screen
+package com.zekierciyas.detail_screen.view_model
 
-import com.zekierciyas.cache.model.detail.SatelliteDetail
 import com.zekierciyas.cache.model.detail.SatelliteDetailItem
-import com.zekierciyas.cache.model.satellite_list.SatelliteListItem
 
 sealed class DetailScreenUiState{
     object Loading: DetailScreenUiState()

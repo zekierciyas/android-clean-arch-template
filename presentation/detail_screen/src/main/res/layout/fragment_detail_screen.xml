@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.zekierciyas.detail_screen.DetailScreenViewModel"/>
+            type="com.zekierciyas.detail_screen.view_model.DetailScreenViewModel"/>
 
         <variable
             name="data"

@@ -1,4 +1,4 @@
-package com.zekierciyas.detail_screen
+package com.zekierciyas.detail_screen.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import com.zekierciyas.detail_screen.view_model.DetailScreenViewModel
 import com.zekierciyas.detail_screen.databinding.FragmentDetailScreenBinding
 import dagger.hilt.android.AndroidEntryPoint
 
