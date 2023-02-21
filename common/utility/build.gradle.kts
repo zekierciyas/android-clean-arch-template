@@ -1,6 +1,9 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+
 }
 
 android {
@@ -30,14 +33,19 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
-
     implementation(DependencyCatalog.core)
     implementation(DependencyCatalog.appCompat)
     implementation(DependencyCatalog.androidMaterial)
     testImplementation(TestImplementation.junit)
     androidTestImplementation(AndroidTestImplementation.junit)
     androidTestImplementation(AndroidTestImplementation.espresso)
+    implementation(DependencyCatalog.daggerHiltAndroid)
+    kapt(DependencyCatalog.daggerHiltCompiler)
 }
