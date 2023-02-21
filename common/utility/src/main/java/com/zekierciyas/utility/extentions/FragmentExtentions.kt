@@ -10,3 +10,4 @@ fun Fragment.hideSoftKeyboard() {
         inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0)
     }
 }
+

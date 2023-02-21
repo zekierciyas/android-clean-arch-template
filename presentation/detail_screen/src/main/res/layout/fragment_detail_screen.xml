@@ -1,6 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.zekierciyas.detail_screen.DetailScreenViewModel"/>
+
+        <variable
+            name="data"
+            type="com.zekierciyas.navigation.SatelliteListArgModel"/>
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/satelliteNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        tools:text="Starship-1"
+        bindSatelliteName="@{vm.uiState}"
+        android:fontFamily="@font/poppins_bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29000002" />
+
+    <TextView
+        android:id="@+id/firstFlightDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins_thin"
+        android:textSize="18sp"
+        bindFirstFlightData="@{vm.uiState}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/satelliteNameText"
+        tools:text="23/04/1997" />
+
+    <TextView
+        android:id="@+id/massText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="18sp"
+        android:text="@string/height_mass"
+        app:layout_constraintEnd_toStartOf="@+id/guideLineHalf"
+        app:layout_constraintTop_toBottomOf="@+id/firstFlightDate"
+        tools:text="Height/Mass:" />
+
+    <TextView
+        android:id="@+id/mass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins"
+        android:textSize="18sp"
+        bindMassAmount="@{vm.uiState}"
+        app:layout_constraintStart_toStartOf="@+id/guideLineHalf"
+        app:layout_constraintTop_toBottomOf="@+id/firstFlightDate"
+        tools:text="10000:" />
+
+    <TextView
+        android:id="@+id/costText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/cost"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideLineHalf"
+        app:layout_constraintTop_toBottomOf="@+id/massText"
+        tools:text="Cost" />
+
+    <TextView
+        android:id="@+id/cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins"
+        android:textSize="18sp"
+        bindCost="@{vm.uiState}"
+        app:layout_constraintStart_toStartOf="@+id/guideLineHalf"
+        app:layout_constraintTop_toBottomOf="@+id/massText"
+        tools:text="687" />
+
+    <TextView
+        android:id="@+id/lastPositionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="18sp"
+        android:text="@string/last_position"
+        app:layout_constraintEnd_toStartOf="@+id/guideLineHalf"
+        app:layout_constraintTop_toBottomOf="@+id/costText"
+        tools:text="Last Position" />
+
+    <TextView
+        android:id="@+id/lastPosition"
+        bindLastPosition="@{vm.positions}"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/last_position"
+        android:lines="2"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideLineHalf"
+        app:layout_constraintTop_toBottomOf="@+id/costText"
+        tools:text="2379472394" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineHalf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

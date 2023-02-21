@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SatelliteList</string>
+    <string name="height_mass">Height/Mass</string>
+    <string name="cost">Cost</string>
+    <string name="last_position">Cost</string>
+</resources>

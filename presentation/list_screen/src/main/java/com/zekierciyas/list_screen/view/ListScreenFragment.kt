@@ -10,12 +10,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zekierciyas.cache.model.satellite_list.SatelliteListItem
 import com.zekierciyas.list_screen.view_model.ListScreenUiState
 import com.zekierciyas.list_screen.view_model.ListScreenViewModel
 import com.zekierciyas.list_screen.adapter.ListScreenAdapter
 import com.zekierciyas.list_screen.databinding.FragmentListScreenBinding
+import com.zekierciyas.navigation.SatelliteListArgModel
 import com.zekierciyas.utility.extentions.hideSoftKeyboard
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -66,6 +68,14 @@ class ListScreenFragment: Fragment(), ListScreenAdapter.OnClickListener {
 
     override fun onClick(item: SatelliteListItem) {
         Timber.d("${item.name} is clicked")
+        val action = ListScreenFragmentDirections.actionListScreenFragmentToDetailScreenFragment(
+            SatelliteListArgModel(
+                active = item.active,
+                id = item.id,
+                name = item.name
+            )
+        )
+        findNavController().navigate(action)
     }
 
     private fun queryTextListener() {

@@ -37,6 +37,7 @@ object DependencyCatalog {
     const val daggerHiltCompiler = "com.google.dagger:hilt-compiler:${Versions.daggerHilt}"
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+    const val navigationModuleSupport = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
 }
 
 object TestImplementation {
