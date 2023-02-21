@@ -8,8 +8,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.zekierciyas.cache.model.satellite_list.SatelliteListItem
 import com.zekierciyas.list_screen.databinding.ItemListScreenBinding
+import com.zekierciyas.list_screen.search.CachedSearchingEngine
+import javax.inject.Inject
 
-class ListScreenAdapter(private val onClickListener: OnClickListener) :
+class ListScreenAdapter @Inject constructor(
+    private val searchingEngine: CachedSearchingEngine
+) :
     RecyclerView.Adapter<ListScreenAdapter.ViewHolder>(), Filterable {
 
     /** Contains the original list from the initial setup phase */
@@ -18,12 +22,18 @@ class ListScreenAdapter(private val onClickListener: OnClickListener) :
     /** Contains the currently filtered data list in the original list */
     private var filteredList = originalList
 
+    private var onClickListener: OnClickListener? = null
+
+    fun setClickListener(onClickListener: OnClickListener) {
+        this.onClickListener = onClickListener
+    }
+
     inner class ViewHolder(private val binding: ItemListScreenBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(satelliteModel: SatelliteListItem) {
             //Binding the relevant model data
             binding.data = satelliteModel
             //Listening click events to pass them click listener
-            binding.root.setOnClickListener { onClickListener.onClick(satelliteModel) }
+            binding.root.setOnClickListener { onClickListener!!.onClick(satelliteModel) }
         }
     }
 
@@ -44,6 +54,7 @@ class ListScreenAdapter(private val onClickListener: OnClickListener) :
      */
     fun initList(originalList: List<SatelliteListItem>) = apply {
         this.originalList = originalList
+        searchingEngine!!.init(givenDataList = originalList)
         updateList(originalList)
     }
 
@@ -81,7 +92,7 @@ class ListScreenAdapter(private val onClickListener: OnClickListener) :
                 val filteredList = if (constraint.isNullOrBlank()) {
                     originalList
                 } else {
-                    originalList.filter { it.name.contains(constraint, true) }
+                    searchingEngine!!.search(constraint.toString())
                 }
                 return FilterResults().apply {
                     values = filteredList

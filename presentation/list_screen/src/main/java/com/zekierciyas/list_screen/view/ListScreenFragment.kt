@@ -20,13 +20,15 @@ import com.zekierciyas.utility.extentions.hideSoftKeyboard
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class ListScreenFragment: Fragment(), ListScreenAdapter.OnClickListener {
 
     private val viewModel: ListScreenViewModel by viewModels()
     private lateinit var binding: FragmentListScreenBinding
-    private lateinit var adapter : ListScreenAdapter
+    @Inject
+    lateinit var adapter: ListScreenAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,17 +50,17 @@ class ListScreenFragment: Fragment(), ListScreenAdapter.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupStoryRecyclerView(listOf())
+        setupStoryRecyclerView()
         queryTextListener()
     }
 
-    private fun setupStoryRecyclerView(list : List<SatelliteListItem>) {
+    private fun setupStoryRecyclerView() {
         binding.recyclerView.layoutManager = LinearLayoutManager(
             requireContext(),
             LinearLayoutManager.VERTICAL,
             false
         )
-        adapter = ListScreenAdapter( this)
+        adapter.setClickListener(this)
         binding.recyclerView.adapter = adapter
     }
 

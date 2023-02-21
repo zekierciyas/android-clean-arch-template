@@ -10,6 +10,7 @@ import javax.inject.Inject
 
 class SatelliteListRepository @Inject constructor(
     @ApplicationContext private val context: Context,
+
     private val storage: PersistentStorage): SatelliteList {
 
     companion object {
