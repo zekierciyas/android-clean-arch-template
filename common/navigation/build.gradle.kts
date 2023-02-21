@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -46,4 +48,5 @@ dependencies {
     kapt(DependencyCatalog.daggerHiltCompiler)
     api(DependencyCatalog.navigationFragment)
     api(DependencyCatalog.navigationUi)
+    api(DependencyCatalog.navigationModuleSupport)
 }

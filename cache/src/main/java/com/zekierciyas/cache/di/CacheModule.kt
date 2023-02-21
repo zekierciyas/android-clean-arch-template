@@ -1,6 +1,7 @@
 package com.zekierciyas.cache.di
 
 import android.content.Context
+import com.zekierciyas.cache.repository.SatellitePositionsRepository
 import com.zekierciyas.cache.repository.satellite_detail.SatelliteDetailRepository
 import com.zekierciyas.cache.storage.PersistentStorage
 import dagger.Module
@@ -20,7 +21,16 @@ object CacheModule {
     fun provideSatelliteDetailRepository(@ApplicationContext context: Context, storage : PersistentStorage): SatelliteDetailRepository {
         return SatelliteDetailRepository(
             context = context,
-            storage
+            storage = storage
+        )
+    }
+
+    @Provides
+    @Singleton
+    fun provideSatellitePositionRepository(@ApplicationContext context: Context, storage : PersistentStorage): SatellitePositionsRepository {
+        return SatellitePositionsRepository(
+            context = context,
+            storage = storage
         )
     }
 

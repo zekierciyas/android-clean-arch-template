@@ -10,12 +10,17 @@
         android:label="ListScreenFragment" >
         <action
             android:id="@+id/action_listScreenFragment_to_detailScreenFragment"
-            app:destination="@id/detailScreenFragment" />
+            app:destination="@id/detailScreenFragment" >
+        </action>
     </fragment>
 
     <fragment
         android:id="@+id/detailScreenFragment"
         android:name="com.zekierciyas.detail_screen.DetailScreenFragment"
-        android:label="ListScreenFragment" />
+        android:label="ListScreenFragment" >
+        <argument
+            android:name="data"
+            app:argType="com.zekierciyas.navigation.SatelliteListArgModel" />
+    </fragment>
 
 </navigation>

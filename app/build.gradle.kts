@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -37,6 +38,7 @@ android {
     buildFeatures {
         dataBinding = true
     }
+
 }
 
 dependencies {
