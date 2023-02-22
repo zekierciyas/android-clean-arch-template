@@ -20,6 +20,7 @@ This application implements the following concepts :
 - DataStore JetPack
 - Timber Logging
 - GSON
+- Search Optimization with Rabin-Karp Algorithm
 
 ### Modularization
 
