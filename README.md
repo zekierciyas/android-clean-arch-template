@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://android-arsenal.com/api?level=21"><img alt="API" src="https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat"/></a>
 </p>
-A demo app to showing dummy list of Satellites, Clean Architecture and Clean code principles in a Modularized MVVM architecture, LiveData and Coroutines.
+A demo app to show dummy list of Satellites with clean architecture and clean code principles in a modularized MVVM architecture.
 
 ## Download APK 🔥
 Click [Releases](https://github.com/zekierciyas/SatelliteList/releases) to download the version's APK.
